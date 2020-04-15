@@ -4,8 +4,8 @@ contract CampaignFactory{
     address[] public deployedCampaigns;
     
     function createCampaign(uint mininmumContribution) public{
-        Campaign newCampaign = new Campaign(mininmumContribution,msg.sender);
-        deployedCampaigns.push(address(newCampaign));
+        address newCampaign = address(new Campaign(mininmumContribution,msg.sender));
+        deployedCampaigns.push(newCampaign);
     }
     
     function getDeployedCampaigns() public view returns(address[] memory){
@@ -74,5 +74,19 @@ contract Campaign{
         require(requests[ind].approvalCount > (approversCount/2));
         requests[ind].recipient.transfer(requests[ind].value);
         requests[ind].completed = true;
+    }
+    
+    function getCampaignDetails() public view returns(uint,uint,uint,uint,address){
+        return (
+            mininmumContribution,
+            address(this).balance,
+            approversCount,
+            requests.length,
+            manager
+        );
+    }
+    
+    function getRequestsCount() public view returns (uint){
+        return (requests.length);
     }
 }
