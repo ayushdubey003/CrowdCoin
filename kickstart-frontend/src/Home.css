@@ -189,9 +189,9 @@ a{
 	height:20px;
 	border-radius: 150px;
 	border-top:4px solid #d3d3d3;
-	border-left:4px solid transparent;
-	border-right:4px solid transparent;
-	border-bottom:4px solid transparent;
+	border-left:4px solid #3b5960;
+	border-right:4px solid #3b5960;
+	border-bottom:4px solid #3b5960;
 	animation-name: loader;
 	animation-iteration-count: infinite;
 	animation-duration: 1s;

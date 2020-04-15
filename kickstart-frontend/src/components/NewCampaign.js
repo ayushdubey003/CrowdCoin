@@ -11,7 +11,8 @@ class NewCampaign extends Component{
         this.state = {
             value: "",
             errorMessage: "",
-            errorVisible: false
+            errorVisible: false,
+            handlingTransaction: false
         }
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -33,9 +34,13 @@ class NewCampaign extends Component{
             const web3Instance = await initWeb3();
             const accounts = await web3Instance.eth.getAccounts();
             try{
+                this.setState({
+                    handlingTransaction: true
+                });
                 const thash = await factoryInstance.methods.createCampaign(minContribution).send({
                     from: accounts[0],
                 });
+                this.props.history.push("/");
             }
             catch(e){
                 this.setState({
@@ -48,6 +53,11 @@ class NewCampaign extends Component{
                         errorVisible: false
                     });
                 },3000);
+            }
+            finally{
+                this.setState({
+                    handlingTransaction: false
+                });
             }
         }
         else{
@@ -72,9 +82,9 @@ class NewCampaign extends Component{
             <form onSubmit={this.handleFormSubmit}>
                 <input type="text" value={this.state.value} onChange={this.handleInputChange} placeholder="Minimum Contribution(in Wei)"></input>
                 <div className="error-message" style={this.state.errorVisible?{display: "block"}:{display: "none"}} >{this.state.errorMessage}</div>
-                <div className="button">
-                    <p >Create!</p>
-                    {/* <div className="loader"></div> */}
+                <div className="button" onClick={this.handleFormSubmit}>
+                    <p style={this.state.handlingTransaction?{display: "none"}:{display: "block"}}>Create!</p>
+                    <div className="loader" style={this.state.handlingTransaction?{display: "block"}:{display: "none"}}></div>
                 </div>
             </form>
         </div>
