@@ -80,7 +80,10 @@ class NewCampaign extends Component{
             <h2>Create a Campaign</h2>
             <h3>Minimum Contribution</h3>
             <form onSubmit={this.handleFormSubmit}>
-                <input type="text" value={this.state.value} onChange={this.handleInputChange} placeholder="Minimum Contribution(in Wei)"></input>
+                <div className="input-box">
+                    <input type="text" value={this.state.value} onChange={this.handleInputChange} placeholder="Minimum Contribution(in Wei)"></input>
+                    <div>wei</div>
+                </div>
                 <div className="error-message" style={this.state.errorVisible?{display: "block"}:{display: "none"}} >{this.state.errorMessage}</div>
                 <div className="button" onClick={this.handleFormSubmit}>
                     <p style={this.state.handlingTransaction?{display: "none"}:{display: "block"}}>Create!</p>
