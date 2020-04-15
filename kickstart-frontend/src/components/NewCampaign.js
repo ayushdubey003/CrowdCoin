@@ -4,6 +4,7 @@ import "../Home.css";
 import factory from "../services/campaignfactory";
 import initWeb3 from "../services/web3";
 import {connect} from "react-redux";
+import {deployedCampaigns} from "../store/actions/deployedCampaigns";
 
 class NewCampaign extends Component{
     constructor(props){
@@ -40,6 +41,7 @@ class NewCampaign extends Component{
                 const thash = await factoryInstance.methods.createCampaign(minContribution).send({
                     from: accounts[0],
                 });
+                await this.props.dispatch(deployedCampaigns());
                 this.props.history.push("/");
             }
             catch(e){

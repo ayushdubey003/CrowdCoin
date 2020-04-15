@@ -15,14 +15,14 @@
     }
 }
 
-.home,.new-campaign-page{
+.home,.new-campaign-page,.show-campaigns{
     display: flex;
     flex-direction: column;
     margin: 1vh 9vw;
     font-family: 'Roboto', sans-serif;
 }
 
-.home>h2,.new-campaign-page>h2,.new-campaign-page>h3{
+.home>h2,.new-campaign-page>h2,.new-campaign-page>h3,.show-campaigns>h2{
     margin: 32px 8px;
     font-size: 28px;
     font-weight: 600;
@@ -36,6 +36,69 @@
 
 .new-campaign-page>form{
     margin: 8px;
+}
+
+.show-campaigns-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.show-campaigns-main>form{
+    width: 25vw;
+}
+
+.card-grid{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap
+}
+
+.card-row{
+    width: 42vw;
+    padding: 8px 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    justify-content: space-between;
+    margin-right: 32px;
+}
+
+.card{
+    border: 1px solid #d3d3d3;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: 18vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card>h1{
+    font-size: 20px;
+    max-width: 17vw;
+    word-wrap: break-word;
+}
+
+.card>p,.show-campaigns-main>form>p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: rgba(0,0,0,0.7);
+}
+
+.show-campaigns-main>form>p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.first-p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
 }
 
 .input-box{
@@ -75,7 +138,7 @@
     font-size: 18px;
 }
 
-.new-campaign-page>form>.button{
+.new-campaign-page>form>.button,.show-campaigns-main>form>.button{
     color: white;
     background: #3b5998;
     border: 1px solid #3b5998;

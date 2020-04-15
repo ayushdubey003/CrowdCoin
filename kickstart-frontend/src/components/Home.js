@@ -33,7 +33,7 @@ function mapStateToProps(state){
     let campaigns =  state.deployedCampaigns.campaigns.map((value,index)=>{
         return  <div className="list" id={index} key={index} style={{marginBottom: "16px"}}>
                     {value}
-                    <Link to={`/campaign/${value}`}><p id={index} style={{margin:"0",marginTop:"8px"}}>View Campaign</p></Link>
+                    <Link to={`/campaigns/${value}`}><p id={index} style={{margin:"0",marginTop:"8px"}}>View Campaign</p></Link>
                 </div>
     });
     let newState = {

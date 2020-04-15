@@ -5,7 +5,7 @@ export default async function factory(){
     const web3 = await initWeb3();
     let factory = await new web3.eth.Contract(
             abi,
-            "0x1aFc6248020DA6723D5f2D2bfDc4D8735ed765c9",
+            "0x1F435E08a8937B31DeE764B32925FC3E7a4338c9",
         );
     return factory;
 }
