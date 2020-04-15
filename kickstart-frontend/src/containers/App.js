@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {loadAccounts} from "../store/actions/loadAccounts";
 import {deployedCampaigns} from "../store/actions/deployedCampaigns";
 import Error from "../components/Error";
+import NewCampaign from "../components/NewCampaign";
 
 class App extends React.Component{
 
@@ -21,6 +22,7 @@ class App extends React.Component{
     return (
       <Switch>
           <Route path="/" component={Home} exact></Route>
+          <Route path="/campaigns/new" component={NewCampaign} exact></Route>
           <Route path="/*" component={Error}></Route>
       </Switch>
     );

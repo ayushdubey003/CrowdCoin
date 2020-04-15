@@ -1,14 +1,85 @@
-.home{
+@keyframes loader{
+	0%{
+	}
+	25%{
+		transform:rotate(90deg);
+	}
+	50%{
+		transform:rotate(180deg);
+	}
+	75%{
+		transform:rotate(270deg);
+	}
+	100%{
+		transform:rotate(360deg);
+    }
+}
+
+.home,.new-campaign-page{
     display: flex;
     flex-direction: column;
     margin: 1vh 9vw;
+    font-family: 'Roboto', sans-serif;
 }
 
-.home>h2{
+.home>h2,.new-campaign-page>h2,.new-campaign-page>h3{
     margin: 32px 8px;
     font-size: 28px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
+}
+
+.new-campaign-page>h3{
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.new-campaign-page>form{
+    margin: 8px;
+}
+
+.new-campaign-page>form>input{
+    width: 99%;
+    height: 4vh;
+    padding: 4px 8px;
+    font-size: 16px;
+    border: 2px solid #d3d3d3;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 16px;
+}
+
+.new-campaign-page>form>.button{
+    color: white;
+    background: #3b5998;
+    border: 1px solid #3b5998;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    width: 7vw;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button>p{
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.new-campaign-page>form>input:focus,.new-campaign-page>form>input:active{
+    border: 2px solid #3b5998;
+}
+
+.error-message{
+    background: rgba(255,0,0,0.3);
+    border: 2px solid #ff0000;
+    padding: 16px 32px;
+    color: #ff0000;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 16px;
 }
 
 .header{
@@ -56,9 +127,8 @@
 }
 
 .main-body-left{
-    min-width: 60vw;
+    width: 60vw;
 }
-
 
 .list{
     font-family: 'Roboto', sans-serif;
@@ -112,4 +182,18 @@ a{
     font-size: 14px;
     border-radius: 24px;
     margin-right: 16px;
+}
+
+.loader{
+	width:20px;
+	height:20px;
+	border-radius: 150px;
+	border-top:4px solid #d3d3d3;
+	border-left:4px solid transparent;
+	border-right:4px solid transparent;
+	border-bottom:4px solid transparent;
+	animation-name: loader;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-timing-function: linear;
 }
