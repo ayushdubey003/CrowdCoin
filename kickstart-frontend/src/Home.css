@@ -15,14 +15,14 @@
     }
 }
 
-.home,.new-campaign-page,.show-campaigns,.requests{
+.home,.new-campaign-page,.show-campaigns,.requests,.new-request{
     display: flex;
     flex-direction: column;
     margin: 1vh 9vw;
     font-family: 'Roboto', sans-serif;
 }
 
-.home>h2,.new-campaign-page>h2,.new-campaign-page>h3,.show-campaigns>h2,.requests>h2{
+.home>h2,.new-campaign-page>h2,.new-campaign-page>h3,.show-campaigns>h2,.requests>h2,.new-request>h2{
     margin: 32px 8px;
     font-size: 28px;
     font-weight: 600;
@@ -108,7 +108,21 @@
     align-items: center;
 }
 
-.input-box>input{
+.input-box-new{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+}
+
+.input-box-new>p{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.input-box>input,.input-box-new>input{
     width: 90%;
     height: 4vh;
     padding: 4px 8px;
@@ -138,7 +152,7 @@
     font-size: 18px;
 }
 
-.new-campaign-page>form>.button,.show-campaigns-main>form>.button,.show-campaigns-main>.card-grid>a>.button,.requests>a>.button{
+.new-campaign-page>form>.button,.show-campaigns-main>form>.button,.show-campaigns-main>.card-grid>a>.button,.requests>a>.button,.new-request>form>.input-box-new>.button{
     color: white;
     background: #3b5998;
     border: 1px solid #3b5998;
