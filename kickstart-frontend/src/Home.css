@@ -387,9 +387,10 @@ a{
     width: 12%    
 }
 
+
 .requests>table>tr>td>p{
     word-wrap: break-word;
-    color: rgba(0,0,0,0.8);
+    color: #000;
     font-size: 16px;
     font-weight: 550;
 }
@@ -419,4 +420,15 @@ a{
 .table-button-two:hover{
     background: teal;
     color: white;
+}
+
+.loader-container{
+    width: 60vw;
+    margin: 1vh 9vw;
+    display: flex;
+    justify-content: center;
+}
+
+.modified>p{
+    color: #a9a9a9;
 }

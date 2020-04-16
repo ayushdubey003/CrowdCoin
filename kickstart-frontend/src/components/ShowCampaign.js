@@ -98,7 +98,6 @@ class ShowCampaign extends Component{
     }
 
     render(){
-        console.log(this.state);
         const {minimumContribution,balance,approversCount,requestsLength,manager} = this.props.getCampaignDetails;
         return <div className="show-campaigns">
             <Header></Header>
@@ -141,8 +140,7 @@ class ShowCampaign extends Component{
 
                     <Link to={`/campaigns/${this.props.match.params.id}/requests`}>
                         <div className="button">
-                            <p style={this.state.handlingTransaction?{display: "none"}:{display: "block"}}>View Requests</p>
-                            <div className="loader" style={this.state.handlingTransaction?{display: "block"}:{display: "none"}}></div>
+                            <p >View Requests</p>
                         </div>
                     </Link>
 
