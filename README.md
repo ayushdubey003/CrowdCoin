@@ -7,7 +7,7 @@ After all depenencies are successfully installed:
 Use command npm start to start server.
 
 
-Note:
+## Note:
 To modify ethereum stuff:
 Install dependncies by npm install in the root directory.
 After all dependencies are successfully installed:
