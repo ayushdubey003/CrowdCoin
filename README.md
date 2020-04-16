@@ -15,3 +15,6 @@ Replace mnemonic and infura project address inside ethereum/deploy.js
 After making any changes to the smart contract run command:
 node compile.js followed by
 node deploy.js which will deploy the smart contract to the provider provided to web3
+
+To know about Kickstart scams visit the website below:
+https://www.digitaltrends.com/cool-tech/biggest-kickstarter-and-indiegogo-scams/
