@@ -15,14 +15,14 @@
     }
 }
 
-.home,.new-campaign-page,.show-campaigns{
+.home,.new-campaign-page,.show-campaigns,.requests{
     display: flex;
     flex-direction: column;
     margin: 1vh 9vw;
     font-family: 'Roboto', sans-serif;
 }
 
-.home>h2,.new-campaign-page>h2,.new-campaign-page>h3,.show-campaigns>h2{
+.home>h2,.new-campaign-page>h2,.new-campaign-page>h3,.show-campaigns>h2,.requests>h2{
     margin: 32px 8px;
     font-size: 28px;
     font-weight: 600;
@@ -138,7 +138,7 @@
     font-size: 18px;
 }
 
-.new-campaign-page>form>.button,.show-campaigns-main>form>.button,.show-campaigns-main>.card-grid>a>.button{
+.new-campaign-page>form>.button,.show-campaigns-main>form>.button,.show-campaigns-main>.card-grid>a>.button,.requests>a>.button{
     color: white;
     background: #3b5998;
     border: 1px solid #3b5998;

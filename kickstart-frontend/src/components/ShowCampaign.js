@@ -140,7 +140,7 @@ class ShowCampaign extends Component{
                     </div>
 
                     <Link to={`/campaigns/${this.props.match.params.id}/requests`}>
-                        <div className="button" onClick={this.handleFormSubmit}>
+                        <div className="button">
                             <p style={this.state.handlingTransaction?{display: "none"}:{display: "block"}}>View Requests</p>
                             <div className="loader" style={this.state.handlingTransaction?{display: "block"}:{display: "none"}}></div>
                         </div>
