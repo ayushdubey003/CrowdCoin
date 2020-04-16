@@ -3,8 +3,8 @@ const HDWalletProvider = require('truffle-hdwallet-provider');
 const factory = require("../kickstart-frontend/src/build/CampaignFactory.json");
 
 const provider = new HDWalletProvider(
-    "earth since banner hard face ordinary merge color magnet cloth woman twist",
-    "https://rinkeby.infura.io/v3/b01d4ab35099466aa23bc12a4ed8f852"
+    <INSERT YOUR MNEMONIC HERE>,
+    <INSERT YOUR INFURA PROJECT ADDRESS HERE>
 );
 
 const web3 = new Web3(provider);
