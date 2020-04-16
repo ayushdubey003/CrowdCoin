@@ -138,7 +138,7 @@
     font-size: 18px;
 }
 
-.new-campaign-page>form>.button,.show-campaigns-main>form>.button{
+.new-campaign-page>form>.button,.show-campaigns-main>form>.button,.show-campaigns-main>.card-grid>a>.button{
     color: white;
     background: #3b5998;
     border: 1px solid #3b5998;
@@ -150,6 +150,11 @@
     width: 7vw;
     align-items: center;
     cursor: pointer;
+}
+
+.show-campaigns-main>.card-grid>a>.button{
+    margin: 32px 8px;
+    width: 10vw;
 }
 
 .button>p{
@@ -221,6 +226,15 @@
 
 .main-body-left{
     width: 60vw;
+}
+
+.loader-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height:40vh;
 }
 
 .list{

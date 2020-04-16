@@ -5,6 +5,7 @@ import {getCampaignDetails} from "../store/actions/getCampaignDetails";
 import {connect} from "react-redux";
 import initWeb3 from "../services/web3";
 import {abi} from "../build/Campaign.json";
+import {Link} from "react-router-dom";
 
 class ShowCampaign extends Component{
     constructor(props){
@@ -13,10 +14,17 @@ class ShowCampaign extends Component{
             value: "",
             handlingTransaction: false,
             errorMessage: "",
-            errorVisible: false
+            errorVisible: false,
+            loading: true
         }
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    componentWillReceiveProps(){
+        this.setState({
+            loading: false
+        });
     }
 
     handleInputChange(e){
@@ -96,7 +104,7 @@ class ShowCampaign extends Component{
             <Header></Header>
             <h2>Campaign Show</h2>
             <div className="show-campaigns-main">
-                <div className="card-grid">
+                <div className="card-grid"  style={this.state.loading?{display:"none"}:{display:"flex"}}>
                     <div className="card-row">
                         <div className="card">
                             <h1>{manager}</h1>
@@ -130,6 +138,17 @@ class ShowCampaign extends Component{
                             <p>The balance is how much money this campaign has left to spend</p>
                         </div>
                     </div>
+
+                    <Link to={`/campaigns/${this.props.match.params.id}/requests`}>
+                        <div className="button" onClick={this.handleFormSubmit}>
+                            <p style={this.state.handlingTransaction?{display: "none"}:{display: "block"}}>View Requests</p>
+                            <div className="loader" style={this.state.handlingTransaction?{display: "block"}:{display: "none"}}></div>
+                        </div>
+                    </Link>
+
+                </div>
+                <div className="loader-container" style={this.state.loading?{display: "flex"}:{display:" none"}}>
+                    <div className="loader"></div>
                 </div>
                 <form onSubmit={this.handleFormSubmit}>
                     <p>Amount to Contribute</p>

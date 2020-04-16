@@ -8,6 +8,9 @@ class Home extends Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            "loading": true
+        }
     }
 
     render(){
@@ -18,6 +21,9 @@ class Home extends Component{
                 <div className="main-body-left">
                     {this.props.campaigns}
                 </div>
+                {/* <div className="loader-container" style={this.state.loading?{display: "flex"}:{display:" none"}}>
+                    <div className="loader"></div>
+                </div> */}
                 <Link to="/campaigns/new">
                     <div className="main-body-right">
                         <div className="plus-border">+</div>
@@ -37,7 +43,7 @@ function mapStateToProps(state){
                 </div>
     });
     let newState = {
-        campaigns: campaigns
+        campaigns: campaigns,
     }
     return newState;
 }
