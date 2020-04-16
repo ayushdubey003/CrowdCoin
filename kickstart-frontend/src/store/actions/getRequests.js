@@ -15,9 +15,11 @@ export function getRequests(id){
             const req = await Campaign.methods.requests(i).call();
             requests.push(req);
         }
+        const approversCount = await Campaign.methods.approversCount().call();
         dispatch({
             type: GET_REQUESTS,
-            requests: requests
+            requests: requests,
+            approversCount: approversCount
         })
     }
 }

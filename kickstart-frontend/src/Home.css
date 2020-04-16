@@ -152,7 +152,13 @@
     font-size: 18px;
 }
 
-.new-campaign-page>form>.button,.show-campaigns-main>form>.button,.show-campaigns-main>.card-grid>a>.button,.requests>a>.button,.new-request>form>.input-box-new>.button{
+.link-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.new-campaign-page>form>.button,.show-campaigns-main>form>.button,.show-campaigns-main>.card-grid>a>.button,.requests>.link-container>a>.button,.new-request>form>.input-box-new>.button{
     color: white;
     background: #3b5998;
     border: 1px solid #3b5998;
@@ -317,4 +323,100 @@ a{
 	animation-iteration-count: infinite;
 	animation-duration: 1s;
 	animation-timing-function: linear;
+}
+
+.requests>table{
+    margin-top: 2vh;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.requests>table>tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 16px;
+    border-top: 1px solid #d3d3d3;
+}
+
+.requests>table>tr:nth-child(1){
+    border-top: none;
+}
+
+.requests>table>tr:nth-child(even){
+    background: #f9f7f7;
+}
+
+.requests>table>tr>th{
+    font-size: 18px;
+    letter-spacing: 0.3px;
+}
+
+.requests>table>tr>td,.requests>table>tr>th{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start
+}
+
+.one{
+    width:5%;
+}
+
+.two{
+    width: 20%;
+}
+
+.three{
+    width:8%;
+}
+
+.four{
+    width:30%;
+}
+
+.five{
+    width: 14%;
+}
+
+.six{
+    width: 12%
+}
+
+.seven{
+    width: 12%    
+}
+
+.requests>table>tr>td>p{
+    word-wrap: break-word;
+    color: rgba(0,0,0,0.8);
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.requests>table>tr>td:hover{
+    color: teal;
+}
+
+.table-button{
+    color: green;
+    border: 1px solid green;
+    padding: 0px 32px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.table-button:hover{
+    background: green;
+    color: white;
+}
+
+.table-button-two{
+    color: teal;
+    border: 1px solid teal;
+}
+
+.table-button-two:hover{
+    background: teal;
+    color: white;
 }

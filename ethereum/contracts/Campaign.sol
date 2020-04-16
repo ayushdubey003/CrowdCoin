@@ -42,8 +42,9 @@ contract Campaign{
     }
     
     function contribute() public payable isContributor(){
+        if(!approvers[msg.sender])
+            approversCount++;
         approvers[msg.sender] = true;
-        approversCount++;
     }
     
     modifier isManager(){

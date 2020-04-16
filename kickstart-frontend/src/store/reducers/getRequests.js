@@ -1,7 +1,8 @@
 import {GET_REQUESTS} from "../actionTypes";
 
 const defaultState = {
-    requests: []
+    requests: [],
+    approversCount: 0
 }
 
 export default function getRequests(state = defaultState, action){
@@ -9,7 +10,8 @@ export default function getRequests(state = defaultState, action){
         case GET_REQUESTS:
             return {
                 ...state,
-                requests: action.requests
+                requests: action.requests,
+                approversCount: action.approversCount
             };
         default:
             return state;
